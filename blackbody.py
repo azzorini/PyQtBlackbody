@@ -25,14 +25,44 @@ class Ui(QtWidgets.QMainWindow):
         self.plotGraph(self.SliderTemp.value())
         self.VLayout.insertWidget(0, self.canvas)
 
+        self.stars_dict = {"Betelgeuse": 3300, "Sol": 5778, "Rigel": 11500}
+        self.load_stars("stars.txt")
+
+        self.starsAction = {}
+        for star in self.stars_dict:
+            newStarAction = QtWidgets.QAction(self)
+            newStarAction.setText(star)
+            newStarAction.setObjectName(f"actionStar{star.replace(' ', '')}")
+            self.menuEstrellas.addAction(newStarAction)
+            self.starsAction[star] = newStarAction
+
         # Conexiones
         self.actionCerrar.triggered.connect(self.close)
         self.actionInformacion.triggered.connect(self.showAbout)
 
         self.SliderTemp.valueChanged[int].connect(self.changeTemp)
 
+        for (star, temp) in self.stars_dict.items():
+            self.starsAction[star].triggered.connect(lambda state, x=temp: self.changeTemp(x))
+
         # Mostramos
         self.show()
+
+    def load_stars(self, filename):
+        try:
+            f = open(filename, "r")
+        except FileNotFoundError:
+            return
+
+        self.stars_dict = {}
+        line = f.readline()
+
+        while line != "":
+            star, temp = line.split(",")
+            self.stars_dict[star] = int(temp)
+            line = f.readline()
+
+        f.close()
 
     def showAbout(self):
         msg = QtWidgets.QMessageBox()
@@ -60,8 +90,8 @@ class Ui(QtWidgets.QMainWindow):
 
     def plotGraph(self, T):
         landa_max = Wien/T*1e9
-        Dlanda = 1000
-        landa = np.linspace(100, landa_max + Dlanda, 1000)
+        Dlanda = 1010
+        landa = np.linspace(10, landa_max + Dlanda, 1000)
         landa_vis = np.linspace(380, 750, 100)
 
         I_landa = self.blackbody_I(landa, T)*1e-12
@@ -73,6 +103,9 @@ class Ui(QtWidgets.QMainWindow):
         self.canvas.axes.plot(landa, I_landa, linewidth=2, color="black")
     
     def changeTemp(self, T):
+        if T != self.SliderTemp.value():
+            self.SliderTemp.setValue(T)
+
         self.LabelTemp.setText(f"{T} K")
         self.canvas.axes.cla()
         self.plotGraph(T)

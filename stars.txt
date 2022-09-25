@@ -1,0 +1,12 @@
+Próxima Centauri,3000
+Betelgeuse,3300
+Antares,3600
+Aldebarán,4000
+Sol,5778
+Alfa Centauri,5800
+Canopus,7300
+Sirio,9950
+Rigel,11500
+Spica,22400
+Acrux,26000
+Mintaka,33000
