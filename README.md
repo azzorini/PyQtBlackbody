@@ -10,3 +10,9 @@ Para poder ejecutar esta aplicación es necesario tener instalado Python y las s
 2. `matplotlib`: Para poder mostrar el espectro del cuerpo negro.
 3. `scipy`: Proporciona varias constantes físicas que se usan a lo largo del programa.
 4. `numpy`: Para realizar los cálculos del espectro que se ha de mostrar.
+
+## ¿Qué tiene el programa?
+
+El programa muestra el espectro de un cuerpo negro para una cierta temperatura. Dispone de un slider que permite ajustar la temperatura que queremos ver.
+
+![Alt Text](CapturaBlackbody.png "Ejemplo")
