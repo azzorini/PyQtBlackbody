@@ -15,4 +15,4 @@ Para poder ejecutar esta aplicación es necesario tener instalado Python y las s
 
 El programa muestra el espectro de un cuerpo negro para una cierta temperatura. Dispone de un slider que permite ajustar la temperatura que queremos ver.
 
-![Captura de ejemplo](/PyQtBlackbody/Capturas/CapturaBlackbody.png?raw=true)
+> ![Captura de ejemplo](/PyQtBlackbody/Capturas/CapturaBlackbody.png?raw=true)
