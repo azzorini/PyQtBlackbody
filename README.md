@@ -15,4 +15,4 @@ Para poder ejecutar esta aplicación es necesario tener instalado Python y las s
 
 El programa muestra el espectro de un cuerpo negro para una cierta temperatura. Dispone de un slider que permite ajustar la temperatura que queremos ver.
 
-Además nos permite elegir entre una lista de estrellas para ajustar su temperatura superficial. Esta lista se lee del archivo "*stars.txt*" que se ha de encontar junto con el ejecutable. Este archivo consta simplemente de una serie de l
+Además nos permite elegir entre una lista de estrellas para ajustar su temperatura superficial. Esta lista se lee del archivo "*stars.txt*" que se ha de encontar junto con el ejecutable. Este archivo consta simplemente de una serie de líneas en las que viene *Nombre Estrella,Temperatura*. Este archivo se puede editar al gusto. Si el archivo no existe se tomar
