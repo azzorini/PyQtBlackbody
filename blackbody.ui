@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PyQtBlackbody</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="font">
@@ -61,10 +61,10 @@
          <bool>false</bool>
         </property>
         <property name="minimum">
-         <number>1000</number>
+         <number>2500</number>
         </property>
         <property name="maximum">
-         <number>15000</number>
+         <number>35000</number>
         </property>
         <property name="singleStep">
          <number>100</number>
@@ -119,6 +119,12 @@
     <addaction name="actionCerrar"/>
     <addaction name="actionInformacion"/>
    </widget>
+   <widget class="QMenu" name="menuEstrellas">
+    <property name="title">
+     <string>Estrellas</string>
+    </property>
+   </widget>
+   <addaction name="menuEstrellas"/>
    <addaction name="menuOpciones"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
