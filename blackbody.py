@@ -76,6 +76,17 @@ class Ui(QtWidgets.QMainWindow):
         landa = landa_nm*1e-9
         return 2*h*c**2/landa**5/(np.exp(h*c/landa/k/T) - 1)
 
+    # Aproximación muy cutre que se podría mejorar bastante
+    def blackbody_rgb_string(self, T):
+        colors = np.array([self.blackbody_I(660, T), self.blackbody_I(560, T), self.blackbody_I(500, T)])
+        colors *= 255/max(colors)
+
+        # Convertimos el resultado a string
+        s = ""
+        for v in colors:
+            s += hex(int(v))[2:]
+        return s
+
     def rect(self, x,y,w,h,c):
         polygon = plt.Rectangle((x,y),w,h,color=c)
         self.canvas.axes.add_patch(polygon)
@@ -110,6 +121,8 @@ class Ui(QtWidgets.QMainWindow):
         self.canvas.axes.cla()
         self.plotGraph(T)
         self.canvas.draw()
+
+        self.labelColor.setStyleSheet(f"height: 160px; width:  160px; background-color: #{self.blackbody_rgb_string(T)}; border-radius: 80px;")
 
 if __name__ == "__main__":
     import sys
