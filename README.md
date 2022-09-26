@@ -21,4 +21,4 @@ Por último, se muestra un círculo con el color aproximado que tendría que ten
 
 ## Lista de mejoras
 
-Hacer que el c
+Hacer que el cálculo del color sea más realista.
