@@ -8,7 +8,7 @@ Para poder ejecutar esta aplicación es necesario tener instalado Python y las s
 
 1. `PyQt5`: Para poder mostrar y manejar la interfaz gráfica.
 2. `matplotlib`: Para poder mostrar el espectro del cuerpo negro.
-3. `scipy`: Proporciona varias constantes físicas que se usan a lo largo del programa.
+3. `scipy`: Proporciona varias constantes físicas que se usan a lo largo del programa y métodos de integración numérica para la determinación del color de la estrella.
 4. `numpy`: Para realizar los cálculos del espectro que se ha de mostrar.
 
 ## ¿Qué tiene el programa?
