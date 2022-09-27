@@ -17,4 +17,4 @@ El programa muestra el espectro de un cuerpo negro para una cierta temperatura. 
 
 Además nos permite elegir entre una lista de estrellas para ajustar su temperatura superficial. Esta lista se lee del archivo "*stars.txt*" que se ha de encontar junto con el ejecutable. Este archivo consta simplemente de una serie de líneas en las que viene *Nombre Estrella,Temperatura*. Este archivo se puede editar al gusto. Si el archivo no existe se tomarán solo tres estrellas: Betelgeuse, el Sol y Rigel.
 
-Por último, se muestra un círculo con el color aproximado que tendría que tener dicha estrella.
+Por último, se muestra un círculo con el color aproximado que tendría que tener dicha estrella. Para la determinación del color se usa el [Espacio de Color CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space).
